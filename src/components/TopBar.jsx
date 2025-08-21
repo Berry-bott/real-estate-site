@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import notification1 from "../assets/notification-1.svg";
-import budgeting from "../assets/budgeting.png";
+import budgeting from "../assets/Budgeting.png";
 import calendar from "../assets/calendar.png";
 import messageNotif from "../assets/message-notif.svg";
 import myxelliaAdmin from "../assets/myxellia-admin.svg";

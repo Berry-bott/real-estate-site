@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BarChart,
   Bar,
@@ -9,7 +8,7 @@ import {
   Legend,
 } from "recharts";
 
-// Example data (adjust as needed)
+// Dataflow
 const data = [
   { name: "Jan", inflow: 32, mrr: 20, gmv: 10 },
   { name: "Feb", inflow: 28, mrr: 18, gmv: 8 },
