@@ -48,7 +48,7 @@ const OverviewCard = ({ icon, title, stats }) => (
       {stats.map(({ label, value }, idx) => (
         <div key={idx} className="flex flex-col min-w-[70px] gap-2">
           <span className="text-xs text-gray-500">{label}</span>
-          <span className="text-xl font-semibold text-gray-900">{value}</span>
+          <span className="text-2xl font-bold text-gray-900">{value}</span>
         </div>
       ))}
     </div>
