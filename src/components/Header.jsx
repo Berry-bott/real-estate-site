@@ -12,7 +12,7 @@ export const Header = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [showBudgetModal, setShowBudgetModal] = useState(false);
 
-  return (  
+  return (
     <header className="w-full max-w-[1440px] mx-auto">
       <Topbar setShowBudgetModal={setShowBudgetModal} setShowCalendar={setShowCalendar} />
       <Navbar
@@ -31,7 +31,7 @@ export const Header = () => {
           <div className="bg-white p-6 rounded shadow-lg w-96">
             <h2 className="text-lg font-semibold">Calendar</h2>
             <div className="mt-2">
-              <Calender/>
+              <Calender />
             </div>
             <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded" onClick={() => setShowCalendar(false)}>
               Close
@@ -39,46 +39,34 @@ export const Header = () => {
           </div>
         </div>
       )}
-       
 
-       
-
-                     
-                                
 {showBudgetModal && (
+  <div
+    className="fixed inset-0 bg-black/40 flex items-center rounded-xl justify-center z-50 px-4"
+    onClick={() => setShowBudgetModal(false)} // Close on overlay click
+  >
     <div
-        className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4"
-            onClick={() => setShowBudgetModal(false)} // Close when clicking overlay
-              >
-                  <div
-                        className="bg-white rounded-xl p-6 w-full max-w-lg shadow-xl relative"
-                              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-                                  >
-                                        {/* Header */}
-                                              <div className="flex justify-between items-center mb-4">
-                                                      <h2 className="text-lg font-semibold">Budget Modal</h2>
-                                                              <button
-                                                                        className="text-zinc-600 hover:text-zinc-900 text-2xl"
-                                                                                  onClick={() => setShowBudgetModal(false)}
-                                                                                          >
-                                                                                                    ×
-                                                                                                            </button>
-                                                                                                                  </div>
+      className="bg-white rounded-xl w-full max-w-lg shadow-xl relative flex flex-col"
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+    >
+      {/* Header */}
+      <div className="flex justify-between items-center  px-6 py-4 border-b">
+        <h2 className="text-lg font-semibold">Budget Modal</h2>
+        <button
+          className="text-zinc-600 hover:text-zinc-900 text-2xl leading-none"
+          onClick={() => setShowBudgetModal(false)}
+        >
+          ×
+        </button>
+      </div>
 
-                                                                                                                        {/* Body */}
-                                                                                                                              <div className="border rounded-md overflow-auto max-h-[70vh]">
-                                                                                                                                      <Budget />
-                                                                                                                                            </div>
-                                                                                                                                                </div>
-                                                                                                                                                  </div>
-                                                                                                                                                  )}
-                                                                                                                                                  
-)}                              
-
-                                            
-                                   
-                                                                                                                      
-
+      {/* Body */}
+      <div className="p-6 max-h-[80vh] overflow-y-auto">
+        <Budget />
+      </div>
+    </div>
+  </div>
+)}
 
 
     </header>

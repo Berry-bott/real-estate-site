@@ -23,7 +23,7 @@ const features = [
 ];
 
 const Budgeting = ({ onCreateBudget }) => (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d1a2f] to-[#14253d] px-4 py-8">
+  <div className="min-h-screen flex items-center rounded-xl justify-center bg-gradient-to-br from-[#0d1a2f] to-[#14253d] px-4 py-8">
     <div className="w-full max-w-md md:max-w-2xl rounded-2xl overflow-hidden shadow-2xl bg-white flex flex-col">
       {/* Top section with calculator icon */}
       <div className="bg-[#0d1a2f] flex flex-col items-center justify-center pt-8 pb-7">
