@@ -42,22 +42,26 @@ export const Header = () => {
 
       {/* Budget Modal */}
       {showBudgetModal && (
-        <div className="fixed inset-0 bg-black/20 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-96 shadow-lg relative">
-            <h2 className="text-lg font-semibold mb-4">Budget Modal</h2>
-            <div className="border-2">
-              <Budget />
-            </div>
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-4">
+              <div className="bg-white rounded-xl p-6 w-full max-w-lg shadow-xl relative">
+                    <h2 className="text-lg font-semibold mb-4">Budget Modal</h2>
 
-            <button
-              className="absolute top-2 right-2 text-zinc-600 hover:text-zinc-900"
-              onClick={() => setShowBudgetModal(false)}
-            >
-              ×
-            </button>
-          </div>
-        </div>
-      )}
+                          <div className="border rounded-md overflow-hidden">
+                                  <Budget />
+                                        </div>
+
+                                              <button
+                                                      className="absolute top-3 right-3 text-zinc-600 hover:text-zinc-900 text-xl"
+                                                              onClick={() => setShowBudgetModal(false)}
+                                                                    >
+                                                                            ×
+                                                                                  </button>
+                                                                                      </div>
+                                                                                        </div>
+                                                                                        )}
+
+
+
     </header>
   );
 };
