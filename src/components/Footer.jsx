@@ -1,4 +1,3 @@
-import React from "react";
 import  message from "../assets/messages-3.svg";
 
 const cards = [

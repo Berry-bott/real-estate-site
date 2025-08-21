@@ -7,8 +7,7 @@ import vector3 from "../assets/Vector2.png";
 import solarHomeLinear from "../assets/solar-home-linear.svg";
 import AnalyticsBarChart from "../components/AnalyticsBarChart";
 
-// -----------------------
-// -----------------------
+
 // Stat Card
 const StatCard = ({ value, label, change, icon,valueColor, changeColor }) => (
   <div className="flex justify-center items-start flex-col flex-1 max-w-[200px] bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm">
@@ -198,93 +197,3 @@ const Analytics = () => {
 
 export default Analytics;
 
-
-// import React from "react";
-
-// // Example imports (you can replace with your actual SVGs/images)
-// import frame4 from "./frame-4.svg";
-// import frame from "./frame.svg";
-// import image from "./image.svg";
-// import profile from "./profile.svg";
-// import solarHomeLinear from "./solar-home-linear.svg";
-// import vector2 from "./vector-2.svg";
-// import vector3 from "./vector-3.svg";
-
-// const StatCard = ({ value, label, icon, change, color }) => {
-//   return (
-//     <div className="flex flex-col w-full items-start gap-3 p-4 bg-white dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-200">
-//       {/* Stat Value */}
-//       <div className={`text-${color} text-2xl font-semibold`}>
-//         {value}
-//       </div>
-
-//       {/* Label */}
-//       <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 font-medium">
-//         {label}
-//       </div>
-
-//       {/* Change Section */}
-//       <div className="flex items-center gap-2 mt-2">
-//         <img
-//           className="w-4 h-4 object-contain"
-//           src={icon}
-//           alt={`${label} icon`}
-//         />
-//         <span className={`text-${color} text-sm font-medium`}>
-//           {change}
-//         </span>
-//       </div>
-//     </div>
-//   );
-// };
-
-// // import React from "react";
-// // import frame from "./frame.svg"; // example, replace with your actual path
-
-// const OverviewCard = ({ icon, title, stats }) => {
-//   return (
-//     <section className="w-full bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
-//       {/* Header */}
-//       <header className="flex justify-between items-center h-14 px-4 bg-blue-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
-//         {/* Title with Icon */}
-//         <div className="flex items-center gap-2.5">
-//           <img className="w-6 h-6 object-contain" src={icon} alt={`${title} icon`} />
-//           <h2 className="text-sm font-medium text-gray-800 dark:text-gray-100">
-//             {title}
-//           </h2>
-//         </div>
-
-//         {/* View All Action */}
-//         <div className="flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400 font-medium cursor-pointer hover:underline">
-//           View all
-//           <img className="w-4 h-4" src={frame} alt="arrow" />
-//         </div>
-//       </header>
-
-//       {/* Stats Section */}
-//       <div className="flex justify-between flex-wrap gap-4 px-4 pt-5 pb-4">
-//         {stats.map(({ label, value }, idx) => (
-//           <div
-//             key={idx}
-//             className="flex flex-col min-w-[100px] gap-2 bg-gray-50 dark:bg-gray-800 px-3 py-2 rounded-lg"
-//           >
-//             <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">
-//               {label}
-//             </span>
-//             <span className="text-2xl text-gray-900 dark:text-gray-100 font-semibold">
-//               {value}
-//             </span>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export const Analytics =()=>{
-//   return(
-//     <main className="inline-flex">
-
-//     </main>
-//   )
-// }
