@@ -9,7 +9,7 @@ import AnalyticsBarChart from "../components/AnalyticsBarChart";
 
 
 // Stat Card
-const StatCard = ({ value, label, change, icon,valueColor, changeColor }) => (
+const StatCard = ({ value, label, change, icon, valueColor, changeColor }) => (
   <div className="flex justify-center items-start flex-col flex-1 max-w-[200px] bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm">
     {/* Value */}
     <span className={`text-lg font-bold ${valueColor}`}>{value}</span>
@@ -112,8 +112,8 @@ const Analytics = () => {
               <button
                 key={t}
                 className={`px-4 py-1 rounded text-sm font-medium transition-colors duration-200 ${tab === t
-                    ? "bg-black text-white"
-                    : "bg-transparent text-gray-500 hover:bg-gray-100"
+                  ? "bg-gray-500 text-white"
+                  : "bg-transparent text-gray-500 hover:bg-gray-100"
                   }`}
                 onClick={() => setTab(t)}
               >
@@ -125,7 +125,7 @@ const Analytics = () => {
           {/* Chart + Stats */}
           <div className="flex flex-col md:flex-row gap-6 px-4 md:px-8 pb-2 pt-4 mt-4 border ">
             {/* Chart */}
-            <div className="flex-1 min-w-[350px]">
+            <div className="flex-1 w-full">
               <AnalyticsBarChart data={chartData[tab]} labels={labels[tab]} />
             </div>
 
@@ -146,7 +146,7 @@ const Analytics = () => {
                 change={2.5}
                 icon={vector1}
                 changeColor="text-green-500"
-                 valueColor="text-green-500"
+                valueColor="text-green-500"
               />
               <StatCard
                 value="₦200,000,000.00"
@@ -154,15 +154,15 @@ const Analytics = () => {
                 change={0.5}
                 icon={vector2}
                 changeColor="text-[#14B8A6]"
-                 valueColor="text-[#14B8A6]"
+                valueColor="text-[#14B8A6]"
               />
               <StatCard
                 value="₦100,000,000.00"
                 label="GMV"
                 change={-0.5}
-                icon={vector3}         
+                icon={vector3}
                 changeColor="text-red-500"
-                 valueColor="text-red-500"
+                valueColor="text-red-500"
               />
             </div>
 

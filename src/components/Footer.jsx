@@ -1,4 +1,7 @@
-import  message from "../assets/messages-3.svg";
+import message from "../assets/messages-3.svg";
+import img1 from "../assets/Metric item.png";
+import img2 from "../assets/img.png";
+import img3 from "../assets/Metric item (1).png";
 
 const cards = [
   {
@@ -7,6 +10,7 @@ const cards = [
     count: 204,
     dots: 2,
     totalDots: 3,
+    image: img1,
     icon: null,
   },
   {
@@ -15,6 +19,7 @@ const cards = [
     count: null,
     dots: 3,
     totalDots: 5,
+    image: img2,
     icon: null,
   },
   {
@@ -23,9 +28,10 @@ const cards = [
     count: null,
     dots: 1,
     totalDots: 5,
+    image: img3,
     icon: (
-      <div className="absolute top-4 right-4 bg-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shadow-lg">
-       <img src={message} alt="" />
+      <div className="absolute top-4 right-4 bg-black rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shadow-lg z-20">
+        <img src={message} alt="Message icon" className="w-4 h-4 sm:w-5 sm:h-5" />
       </div>
     ),
   },
@@ -41,17 +47,26 @@ const DotIndicator = ({ active, keyProp }) => (
 );
 
 const FooterShowcase = () => (
-  <footer className="w-full bg-transparent px-2 py-8">
+  <footer className="w-full bg-transparent px-8 py-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {cards.map((card, idx) => (
         <div
           key={idx}
-          className="relative w-full sm:w-auto max-w-none sm:max-w-[360px] md:max-w-[420px] h-[200px] sm:h-[240px] md:h-[280px] lg:h-[300px] rounded-xl overflow-hidden shadow bg-gradient-to-b from-gray-100 to-gray-200"
+          className="relative w-full sm:w-auto max-w-none sm:max-w-[360px] md:max-w-[420px] h-[200px] sm:h-[240px] md:h-[280px] lg:h-[300px] rounded-xl overflow-hidden shadow"
         >
+          {/* Background image */}
+          <img
+            src={card.image}
+            alt={card.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10" />
+
           {/* Optional icon */}
           {card.icon}
+
           {/* Content */}
           <div className="absolute bottom-4 left-4 right-4 z-20">
             <div className="text-[10px] sm:text-xs text-white font-semibold opacity-90 mb-1 tracking-wide">
@@ -62,7 +77,7 @@ const FooterShowcase = () => (
                 {card.subtitle}
               </div>
               {card.count && (
-                <div className="text-lg sm:text-xl md:text-2xl font-semibold text-black drop-shadow">
+                <div className="text-lg sm:text-xl md:text-2xl font-semibold text-white drop-shadow">
                   {card.count}
                 </div>
               )}

@@ -1,45 +1,69 @@
-import PropTypes from "prop-types";
 import React from "react";
-import tooltip from "./tooltip.svg";
+import calcIcon from "../assets/Budgeting.png";       // top calculator icon
+import feature1 from "../assets/solar-home-linear.svg";  // replace with real images
+import feature2 from "../assets/vector-2.svg";
+import feature3 from "../assets/vector-2.svg";
+// import feature3 from "../assets/feature3.png";
 
-/**
- * Budgeting component displays an icon with an optional tooltip.
- * When `property1` is set to "variant-2", it shows a tooltip labeled "Budgeting".
- */
-export const Budgeting = ({ property1, className = "" }) => {
-  const isVariant2 = property1 === "variant-2";
+const features = [
+  {
+    icon: feature1,
+    title: "Set up annual budgets by account category",
+    desc: "Allocate funds across income and expense lines with full visibility.",
+  },
+  {
+    icon: feature2,
+    title: "Track actuals vs budget in real time",
+    desc: "See how your community is performing against plan, month by month.",
+  },
+  {
+    icon: feature3,
+    title: "Adjust figures and forecast with ease",
+    desc: "Edit amounts, apply percentage changes, or roll forward last year’s data—all in one place.",
+  },
+];
 
-  return (
-    <div
-      className={`relative w-8 h-8 bg-[100%_100%] ${
-        isVariant2 ? "bg-[url(/calculator.svg)]" : ""
-      } ${className}`}
-      role="img"
-      aria-label={
-        isVariant2 ? "Calculator icon with Budgeting tooltip" : "Icon"
-      }
-    >
-      {isVariant2 && (
-        <div className="absolute top-[38px] left-[-22px] inline-flex flex-col items-center shadow-shadow-2xl z-10">
-          <img
-            className="w-4 h-[8.52px]"
-            alt=""
-            src={tooltip}
-            aria-hidden="true"
-            loading="lazy"
-          />
-          <div className="flex flex-col items-start px-3 py-2 bg-zinc-900 rounded-lg">
-            <span className="text-white text-center font-footnote-regular text-[length:var(--footnote-regular-font-size)] tracking-[var(--footnote-regular-letter-spacing)] leading-[var(--footnote-regular-line-height)] whitespace-nowrap">
-              Budgeting
-            </span>
-          </div>
+const Budgeting = ({ onCreateBudget }) => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0d1a2f] to-[#14253d] px-4 py-8">
+    <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl bg-white">
+      {/* Top section with image */}
+      <div className="bg-[#0d1a2f] flex flex-col items-center justify-center pt-8 pb-7">
+        <div className="bg-[#0d1a2f] rounded-full p-4 mb-2">
+          <img src={calcIcon} alt="Calculator" className="w-14 h-14 object-contain" />
         </div>
-      )}
-    </div>
-  );
-};
+      </div>
 
-Budgeting.propTypes = {
-  property1: PropTypes.oneOf(["variant-2", "default"]).isRequired,
-  className: PropTypes.string,
-};
+      {/* Features */}
+      <div className="bg-white px-6 sm:px-8 pt-7 pb-6">
+        {features.map((f, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-3 mb-6 last:mb-0"
+          >
+            <img
+              src={f.icon}
+              alt={f.title}
+              className="w-6 h-6 object-contain mt-1 flex-shrink-0"
+            />
+            <div>
+              <div className="font-semibold text-base sm:text-lg text-[#111] leading-tight mb-1">
+                {f.title}
+              </div>
+              <div className="text-gray-500 text-sm sm:text-[15px]">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+
+        {/* CTA button */}
+        <button
+          className="w-full mt-4 bg-[#2563eb] text-white rounded-full py-3 text-base font-medium transition hover:bg-[#1d4ed8] active:scale-95"
+          onClick={onCreateBudget}
+        >
+          Create Budget
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+export default Budgeting;
