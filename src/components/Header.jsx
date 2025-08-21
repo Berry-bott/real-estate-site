@@ -42,7 +42,7 @@ export const Header = () => {
 
 {showBudgetModal && (
   <div
-    className="fixed inset-0 bg-black/40 flex items-center rounded-xl justify-center z-50 px-4"
+    className="fixed top-20 inset-0 bg-black/40 flex items-center rounded-xl justify-center z-50 px-4"
     onClick={() => setShowBudgetModal(false)} // Close on overlay click
   >
     <div
@@ -61,7 +61,7 @@ export const Header = () => {
       </div>
 
       {/* Body */}
-      <div className="p-6 max-h-[80vh] overflow-y-auto">
+      <div className="p-6 max-h-[70vh] overflow-y-auto">
         <Budget />
       </div>
     </div>
