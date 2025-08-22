@@ -2,6 +2,8 @@ import message from "../assets/messages-3.svg";
 import img1 from "../assets/Metric item.png";
 import img2 from "../assets/img.png";
 import img3 from "../assets/Metric item (1).png";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const cards = [
   {
@@ -16,7 +18,7 @@ const cards = [
   {
     title: "MOST WATCHLISTED",
     subtitle: "Urban Prime Plaza Premiere",
-    count: null,
+    count: 120,
     dots: 3,
     totalDots: 5,
     image: img2,
@@ -25,7 +27,7 @@ const cards = [
   {
     title: "HOTTEST LISTING",
     subtitle: "Urban Prime Plaza Premiere",
-    count: null,
+    count: 75,
     dots: 1,
     totalDots: 5,
     image: img3,
@@ -50,15 +52,19 @@ const FooterShowcase = () => (
   <footer className="w-full bg-transparent px-8 py-8">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {cards.map((card, idx) => (
-        <div
+        <motion.div
           key={idx}
-          className="relative w-full sm:w-auto max-w-none sm:max-w-[360px] md:max-w-[420px] h-[200px] sm:h-[240px] md:h-[280px] lg:h-[300px] rounded-xl overflow-hidden shadow"
+          className="relative w-full sm:w-auto max-w-none sm:max-w-[360px] md:max-w-[420px] h-[200px] sm:h-[240px] md:h-[280px] lg:h-[300px] rounded-xl overflow-hidden shadow cursor-pointer group"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: idx * 0.2 }}
+          viewport={{ once: true }}
         >
-          {/* Background image */}
-          <img
+          {/* Background image with grow effect */}
+          <motion.img
             src={card.image}
             alt={card.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
           />
 
           {/* Gradient overlay */}
@@ -78,7 +84,7 @@ const FooterShowcase = () => (
               </div>
               {card.count && (
                 <div className="text-lg sm:text-xl md:text-2xl font-semibold text-white drop-shadow">
-                  {card.count}
+                  <CountUp end={card.count} duration={1.5} />
                 </div>
               )}
             </div>
@@ -89,7 +95,7 @@ const FooterShowcase = () => (
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   </footer>
