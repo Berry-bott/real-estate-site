@@ -1,12 +1,44 @@
-# React + Vite
+# REAL ESTATE DASHBOARD 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **responsive React dashboard** built with **Tailwind CSS, ShadCN/UI, and Supabase**.  
+Includes top navigation, bottom navigation, charts, budgeting modal, and calendar.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features  
 
-## Expanding the ESLint configuration
+- 📱 **Responsive UI** (mobile-first, works on all devices)  
+- 🔍 **Search bar** with expand + clear button  
+- 📅 **Calendar** (React-Calendar + Tailwind styling)  
+- 📊 **Analytics Bar Chart**  
+- 💰 **Budget Modal** (open/close with `×` or overlay click)  
+- 🔔 **Notifications** (Supabase real-time)  
+- 🌓 **Dark/Light Mode toggle**  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack  
+
+- **React + Vite**  
+- **Tailwind CSS**  
+- **Shadcn/UI**  
+- **Supabase**  
+- **React-Calendar**  
+- **Lucide Icons**  
+
+---
+
+## ⚡ Getting Started  
+
+```bash
+# 1. Clone repo
+git clone https://github.com/real-estate-sites.com
+git
+cd real-estate-projects
+
+# 2. Install dependencies
+npm install
+
+# 3. Start dev server
+npm run dev
+
